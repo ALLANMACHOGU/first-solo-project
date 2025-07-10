@@ -1,0 +1,54 @@
+---
+/* Library imports go here */
+const { title, children } = Astro.props;
+/* Javascript that run "server-side" when we build go here */
+
+import "../scripts/main.js";
+---
+
+<!-- HTML Code goes here w/ "Astro" templating in curly brackets --><!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initialScale=1.0" />
+     <script src="../scripts/main.js"></script>
+    <script>
+      import "../scripts/browser.js";
+    </script>
+    <title>
+      {title}
+    </title>
+    <slot name="head" />
+  </head>
+  <body class="container">
+    <slot />
+
+  </body>
+</html>
+<footer>
+<b>Acknowledgments:</b> 
+</footer>
+<p>
+I used ChatGPT for instructions on the particles in the background.
+</p>
+<p>
+ I used AOS.jss for the main headline fade-in.
+</p>
+<p>
+I used PicoCSS for the page's format.
+</p>
+<p xmlns:cc="http://creativecommons.org/ns#" 
+xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" 
+rel="cc:attributionURL" 
+href="https://iacs-cs.github.io/apcsp-portfolio-ALLANMACHOGU/">Allan Machogu's Project Portfolio</a> by 
+<span property="cc:attributionName">Allan Machogu</span> is licensed under 
+<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" 
+rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img 
+style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" 
+src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" 
+alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" 
+src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" 
+alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" 
+src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+
+    <canvas class="background"></canvas>
