@@ -1,11 +1,8 @@
-import { defineConfig } from "astro/config";
-
+// ...existing code...
 export default defineConfig({
-  vite: {
-    build: {
-      minify: false,
-    },
-  },
+  base: process.env.BASE || '/',
+  // ...other config...
 });
+// ...existing code...
 
-// This configuration file is for an Astro project. AI typing this, I'm coping it from APCSP framework.
+//used with gpt 4.1, as well as on deploy.yml

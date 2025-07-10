@@ -25,10 +25,8 @@ jobs:
         run: |
           # Extract repo name and set the base URL to /repo-name/
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
-
-          # Update Astro config base dynamically
-          npx astro build --base "/${REPO_NAME}/"
+          echo "BASE=/${REPO_NAME}/" >> $GITHUB_ENV
+          npx astro build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -36,3 +34,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages # Adjust if you have a different branch for GitHub Pages
+
+
