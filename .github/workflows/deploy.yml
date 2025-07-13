@@ -28,7 +28,7 @@ jobs:
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
           echo "BASE_PATH=/${REPO_NAME}/" >> $GITHUB_ENV
           npx astro build
-# ...existing code...
+# ...existing code..
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
