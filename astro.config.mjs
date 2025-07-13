@@ -1,8 +1,11 @@
-import { defineConfig } from 'astro/config';
+// filepath: /workspaces/apcsp-portfolio-ALLANMACHOGU/astro.config.mjs
+import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  base: process.env.BASE || '/',
-  // ...other config...
+  base: process.env.BASE_PATH || "/",
+  vite: {
+    build: {
+      minify: false,
+    },
+  },
 });
-
-//used with gpt 4.1, as well as on deploy.yml
