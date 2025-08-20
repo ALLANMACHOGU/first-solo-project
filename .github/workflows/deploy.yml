@@ -22,13 +22,14 @@ jobs:
         run: npm install
 
       - name: Build
-# filepath: /workspaces/apcsp-portfolio-ALLANMACHOGU/.github/workflows/deploy.yml
-# ...existing code...
         run: |
+          # Extract repo name and set the base URL to /repo-name/
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          echo "BASE_PATH=/${REPO_NAME}/" >> $GITHUB_ENV
-          npx astro build
-# ...existing code..
+          echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
+
+          # Update Astro config base dynamically
+          npx astro build --base "/${REPO_NAME}/"
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

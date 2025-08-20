@@ -6,7 +6,9 @@
       "request": "launch",
       "name": "Launch Astro",
       "program": "${workspaceFolder}/node_modules/.bin/astro",
-      "args": ["dev"],
+      "args": [
+        "dev"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     }
